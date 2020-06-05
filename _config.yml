@@ -1,0 +1,32 @@
+name: 'starminga'
+keywords: 'health, wellbeing, well-being, lifestyle, life-style, fashion, models'
+description: 'because june only has 30 days'
+
+url: https://starmin.ga
+baseurl: ''
+port: 8456
+permalink: /:title/
+
+encoding: utf-8
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "list"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+relative_permalinks: false
+include: ['_pages']
+exclude: [.git, .gitignore, .sass-cache, README.md]

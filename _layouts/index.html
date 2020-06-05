@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    {% include meta.html %}
+  </head>
+  <body>
+    <div class="top-bar"><div class="top-bar-text">{{ site.name }}</div></div>
+    <div class="home">
+      <div class="header">
+        <div class="header-image"
+             ><div class="header-profile-picture"></div>
+        </div>
+
+        <div class="header-info">
+          <div class="header-title">june &nbsp; 2020</div>
+          <div class="header-counter-container">
+            <div class="header-counter"><div class="header-counter-bold">{{ site.posts.size }}</div> posts</div>
+            <div class="header-counter"><div class="header-counter-bold">0</div> followers</div>
+            <div class="header-counter"><div class="header-counter-bold">0</div> following</div>
+          </div>
+          <div class="header-text">{{ site.description }}</div>
+        </div>
+      </div>
+
+      <div class="posts">
+        {% for p in site.data.posts %}
+          {{ p.title }}
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

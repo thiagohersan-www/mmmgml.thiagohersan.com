@@ -1,0 +1,128 @@
+---
+---
+
+@import 'constants';
+@import 'font.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  font-size: 14px;
+  @include media-query(DESKTOP) {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: inherit;
+  &:visited {
+    color: inherit;
+  }
+}
+
+.top-bar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-image: linear-gradient(90deg, aquamarine, cornflowerblue);
+  border-bottom: 1px solid $TEXT-MEDIUM-COLOR;
+
+  .top-bar-text {
+    width: 66%;
+    margin: 0 auto;
+    padding: 10px 2px;
+    box-sizing: border-box;
+
+    font-size: 24px;
+    font-weight: 200;
+    letter-spacing: -.15em;
+    text-transform: capitalize;
+  }
+}
+
+.home {
+  width: 100%;
+  min-height: 200vh;
+  margin: 0 auto;
+  background-image: linear-gradient(0deg, aquamarine, cornflowerblue);
+
+  @include media-query(DESKTOP) {
+    width: 66%;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $TEXT-MEDIUM-COLOR;
+    background-image: linear-gradient(180deg, blueviolet, blue);
+
+    @include media-query(DESKTOP) {
+      padding: 0;
+    }
+
+    .header-image {
+      width: 33%;
+      min-height: 333px;
+      background-image: linear-gradient(270deg, darkorange, deeppink);
+
+      .header-profile-picture {
+        width: 55%;
+        padding-bottom: 55%;
+        margin: 36px auto;
+        border-radius: 50%;
+        background-image: linear-gradient(90deg, darkorange, deeppink);
+        background-image: url({{ site.baseurl }}/assets/covers/cover.jpg);
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .header-info {
+      box-sizing: border-box;
+      flex-grow: 1;
+      min-height: 333px;
+      padding: 36px 16px;
+      background-image: linear-gradient(90deg, orange, deeppink);
+
+      .header-title {
+        font-size: 30px;
+        font-weight: 100;
+        letter-spacing: -.1em;
+      }
+
+      .header-counter-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+
+        .header-counter + .header-counter {
+          margin-left: 48px;
+        }
+
+        .header-counter {
+          padding: 20px 0;
+          font-weight: 200;
+
+          .header-counter-bold {
+            display: inline;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .header-text {
+        width: 50%;
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+  }
+}

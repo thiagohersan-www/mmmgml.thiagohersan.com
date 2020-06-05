@@ -1,0 +1,32 @@
+<meta name="description" content="{{ page.title }}">
+<meta name="keywords" content="{{ site.keywords }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="{{page.title}}">
+<meta name="twitter:creator" content="">
+
+<meta property="og:title" content="{{page.title}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{site.url}}{{site.baseurl}}{{page.url}}">
+<meta property="og:site_name" content="{{site.name}}">
+<meta property="article:publisher" content="">
+
+{% assign description = page.content | strip_html | truncatewords:8 %}
+
+{% unless description.size > 0 %}
+  {% assign description = site.description %}
+{% endunless %}
+
+<meta name="twitter:description" content="{{ description }}">
+<meta property="og:description" content="{{ description }}">
+
+{% assign basepath = site.url | append: site.baseurl %}
+{% assign coverImagePath = basepath | append: "/assets/covers/cover.jpg" %}
+
+{% if page.cover %}
+  {% assign coverImagePath = basepath | append: page.cover %}
+{% endif %}
+
+<meta name="twitter:image" content="{{ coverImagePath }}">
+<meta property="og:image" content="{{ coverImagePath }}">
