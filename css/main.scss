@@ -25,7 +25,8 @@ a {
   width: 100%;
   position: sticky;
   top: 0;
-  background-image: linear-gradient(90deg, aquamarine, cornflowerblue);
+  //background-image: linear-gradient(90deg, aquamarine, cornflowerblue);
+  background-image: linear-gradient(0deg, #fff, #eee);
   border-bottom: 1px solid $TEXT-MEDIUM-COLOR;
   z-index: 100;
 
@@ -54,40 +55,55 @@ a {
   .header {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    padding: 0 16px;
     box-sizing: border-box;
     border-bottom: 1px solid $TEXT-MEDIUM-COLOR;
-    background-image: linear-gradient(180deg, blueviolet, blue);
 
     @include media-query(DESKTOP) {
-      padding: 0;
+      flex-direction: row;
     }
 
     .header-image {
-      width: 33%;
-      min-height: 256px;
-      background-image: linear-gradient(270deg, darkorange, deeppink);
+      width: 100%;
+      min-height: 128px;
+      background-image: linear-gradient(180deg, darkorange, deeppink);
+
+      @include media-query(DESKTOP) {
+        width: 33%;
+        min-height: 256px;
+        flex-direction: row;
+        background-image: linear-gradient(270deg, darkorange, deeppink);
+      }
 
       .header-profile-picture {
-        width: 66%;
-        padding-bottom: 66%;
-        margin: 36px auto;
+        width: 33%;
+        padding-bottom: 33%;
+        margin: 36px auto 12px;
         border-radius: 50%;
-        background-image: linear-gradient(90deg, darkorange, deeppink);
         background-image: url({{ site.baseurl }}/assets/covers/profile.jpg);
         background-position: right center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @include media-query(DESKTOP) {
+          width: 66%;
+          padding-bottom: 66%;
+          margin-bottom: 36px;
+        }
       }
     }
 
     .header-info {
       box-sizing: border-box;
       flex-grow: 1;
-      padding: 36px 16px;
-      background-image: linear-gradient(90deg, darkorange, deeppink);
+      padding: 0 16px 36px;
+      background-image: linear-gradient(0deg, darkorange, deeppink);
+
+      @include media-query(DESKTOP) {
+        padding: 36px 16px;
+        background-image: linear-gradient(90deg, darkorange, deeppink);
+      }
 
       .header-title {
         font-size: 30px;
@@ -99,7 +115,6 @@ a {
         width: 100%;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
         box-sizing: border-box;
 
         .header-counter + .header-counter {
