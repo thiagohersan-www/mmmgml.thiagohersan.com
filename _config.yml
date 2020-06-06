@@ -29,3 +29,4 @@ kramdown:
   syntax_highlighter: rouge
 relative_permalinks: false
 exclude: [.git, .gitignore, .sass-cache, README.md]
+include: [_pages]
