@@ -15,7 +15,6 @@
         crossorigin="anonymous"></script>
 <script src="{{ site.baseurl }}/js/jquery.swipebox.min.js"></script>
 
-{% if page.swipebox %}
+{% if page.layout == 'index' %}
   <script src="{{ site.baseurl }}/js/swipebox.js"></script>
-  <script src="{{ site.baseurl }}/js/product-gallery.js"></script>
 {% endif %}

@@ -27,6 +27,7 @@ a {
   top: 0;
   background-image: linear-gradient(90deg, aquamarine, cornflowerblue);
   border-bottom: 1px solid $TEXT-MEDIUM-COLOR;
+  z-index: 100;
 
   .top-bar-text {
     width: 66%;
@@ -43,7 +44,6 @@ a {
 
 .home {
   width: 100%;
-  min-height: 200vh;
   margin: 0 auto;
   background-image: linear-gradient(0deg, aquamarine, cornflowerblue);
 
@@ -67,7 +67,7 @@ a {
 
     .header-image {
       width: 33%;
-      min-height: 333px;
+      min-height: 256px;
       background-image: linear-gradient(270deg, darkorange, deeppink);
 
       .header-profile-picture {
@@ -86,7 +86,6 @@ a {
     .header-info {
       box-sizing: border-box;
       flex-grow: 1;
-      min-height: 333px;
       padding: 36px 16px;
       background-image: linear-gradient(90deg, darkorange, deeppink);
 
@@ -124,5 +123,41 @@ a {
         font-weight: 300;
       }
     }
+  }
+}
+
+.posts {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  .post {
+    width: 29%;
+    flex-grow: 1;
+    padding: 1% 1%;
+    box-sizing: border-box;
+  }
+}
+
+.post-gallery {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+  .gallery-thumbnail {
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .gallery-thumbnail.first {
+    position: relative;
+    top: 0;
+    padding-bottom: 100%;
   }
 }

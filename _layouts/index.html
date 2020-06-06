@@ -24,8 +24,13 @@
       </div>
 
       <div class="posts">
-        {% for p in site.data.posts %}
-          {{ p.title }}
+        {% for i in (1..30) reversed %}
+          {% assign day = i | prepend: '00' | slice: -2, 2 %}
+          {% assign prefix = day | prepend: '202006' %}
+          {% assign date = day | prepend: '2020/06/' %}
+
+          {% include post.html prefix=prefix title=p.date %}
+
         {% endfor %}
       </div>
     </div>

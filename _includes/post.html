@@ -1,0 +1,18 @@
+{% assign files = site.static_files | where_exp:"file","file.path contains include.prefix" %}
+
+{% if files.size > 0 %}
+  <div class="post">
+    <div class="post-gallery">
+      {% for file in files limit: 5 %}
+        {% assign classes = "gallery-thumbnail" %}
+        {% if forloop.first %}
+          {% assign classes = "gallery-thumbnail first" %}
+        {% endif %}
+
+        <a rel="{{ include.prefix }}" href="{{ site.baseurl }}{{ file.path }}" class="swipebox">
+          <div class="{{ classes }}" style="background-image: url('{{ site.baseurl }}{{ file.path }}')"></div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
