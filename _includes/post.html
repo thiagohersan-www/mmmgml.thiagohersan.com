@@ -1,4 +1,4 @@
-{% assign files = site.static_files | where_exp:"file","file.path contains include.prefix" %}
+{% assign files = site.static_files | where_exp:"file","file.name contains include.prefix" %}
 
 {% if files.size > 0 %}
   <div class="post">
