@@ -29,7 +29,7 @@
           {% assign prefix = day | prepend: '202006' %}
           {% assign date = day | prepend: '2020/06/' %}
 
-          {% include post.html prefix=prefix title=p.date %}
+          {% include post.html prefix=prefix title=date %}
 
         {% endfor %}
       </div>
