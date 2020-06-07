@@ -12,11 +12,8 @@
 <meta property="og:site_name" content="{{site.name}}">
 <meta property="article:publisher" content="">
 
-{% assign description = page.content | strip_html | truncatewords:8 %}
+{% assign description = site.description | append: '.' | append: site.subdescription | append: '.'  %}
 
-{% unless description.size > 0 %}
-  {% assign description = site.description %}
-{% endunless %}
 
 <meta name="twitter:description" content="{{ description }}">
 <meta property="og:description" content="{{ description }}">
