@@ -179,17 +179,13 @@ a {
   box-sizing: border-box;
 
   .gallery-thumbnail {
+    display: block;
+    position: relative;
     width: 100%;
-    position: absolute;
+    padding-bottom: 100%;
     box-sizing: border-box;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  .gallery-thumbnail.first {
-    position: relative;
-    top: 0;
-    padding-bottom: 100%;
   }
 }

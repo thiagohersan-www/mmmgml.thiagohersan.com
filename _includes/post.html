@@ -4,13 +4,10 @@
   <div class="post">
     <div class="post-gallery">
       {% for file in files %}
-        {% assign classes = "gallery-thumbnail" %}
-        {% if forloop.first %}
-          {% assign classes = "gallery-thumbnail first" %}
-        {% endif %}
-
         <a rel="{{ include.prefix }}" href="{{ site.baseurl }}{{ file.path }}" class="swipebox">
-          <div class="{{ classes }}" style="background-image: url('{{ site.baseurl }}{{ file.path }}')"></div>
+          {% if forloop.first %}
+            <div class="gallery-thumbnail" style="background-image: url('{{ site.baseurl }}{{ file.path }}')"></div>
+          {% endif %}
         </a>
       {% endfor %}
     </div>
